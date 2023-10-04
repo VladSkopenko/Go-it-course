@@ -13,29 +13,13 @@
 # У цьому прикладі функція поверне True в обох випадках.
 # print(is_spam_words("Ты лох.", ["лох"]))  # True
 # print(is_spam_words("Ты лох.", ["лох"], True))  # True
+text = "Ты малох"
+text_2 = "Ты лох."
+spam_words = ["pidor", "kisd", "Лох"]
 
 def is_spam_words(text, spam_words, space_around=False):
-    cost = 0
-    text = text.lower()
-    word_s = []
-    new_text =  text.replace(".","")
-    word_of_text_in_list = new_text.split()
-    for word in spam_words:
-        word_s.append(word.lower())
-    if space_around:
-        for element in word_s:
-            if str(element) in text:
-                cost += 1
-            else:
-                cost += 0
-            return True if cost >= 1 else False
-    else:
-        for element in word_s:
-            if str(element) in word_of_text_in_list:
-                cost += 1 
-            else:
-                cost += 0
-            return True if cost >= 1  else False
+    
+
                 
 
     
