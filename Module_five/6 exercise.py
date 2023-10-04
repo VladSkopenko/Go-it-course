@@ -19,22 +19,19 @@ spam_words = ["pidor", "kisd", "Лох"]
 
 def is_spam_words(text, spam_words, space_around=False):
     text = text.lower()
-    spam = []
-    count = 0 
+    spam = [word.lower() for word in spam_words]
+
     if space_around:
-        for word in spam_words:
-            spam.append(word.lower())
-            if word.lower() in text:
-                count += 1
-        if count >= 1:
-            return True
+        for word in spam:
+            if word in text:
+                index = text.find(word)
+                if (index == 0 or not text[index - 1].isalpha()) and \
+                        (index + len(word) == len(text) or not text[index + len(word)].isalpha()):
+                    return True
+        return False
     else:
-        text_list = text.replace(".", "")
-        text_list = text_list.split()
-        if set(spam_words) & set(text_list):
-            return True 
-        else:
-            return False
+        return any(word in text for word in spam)
+            
         
 print(is_spam_words(text,spam_words,True))
         
