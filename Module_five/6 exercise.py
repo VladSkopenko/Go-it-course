@@ -18,7 +18,11 @@ text_2 = "Ты лох."
 spam_words = ["pidor", "kisd", "Лох"]
 
 def is_spam_words(text, spam_words, space_around=False):
-    
+    text = text.lower()
+    spam = []
+    for word in spam_words:
+        spam.append(word.lower())
+
 
                 
 
