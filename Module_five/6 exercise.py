@@ -26,11 +26,21 @@ def is_spam_words(text, spam_words, space_around=False):
             spam.append(word.lower())
             if word.lower() in text:
                 count += 1
+        if count >= 1:
+            return True
     else:
-        text = text.split()
-        text = text.replace(".", "")
+        text_list = text.replace(".", "")
+        text_list = text_list.split()
+        if set(spam_words) & set(text_list):
+            return True 
+        else:
+            return False
+        
+print(is_spam_words(text,spam_words,True))
+        
 
-    
+
+
 
 
 
