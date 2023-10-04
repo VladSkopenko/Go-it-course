@@ -20,8 +20,18 @@ spam_words = ["pidor", "kisd", "Лох"]
 def is_spam_words(text, spam_words, space_around=False):
     text = text.lower()
     spam = []
-    for word in spam_words:
-        spam.append(word.lower())
+    count = 0 
+    if space_around:
+        for word in spam_words:
+            spam.append(word.lower())
+            if word.lower() in text:
+                count += 1
+    else:
+        text = text.split()
+        text = text.replace(".", "")
+
+    
+
 
 
                 
