@@ -22,9 +22,11 @@ grades = {"A": 5, "B": 5, "C": 4, "D": 3, "E": 3, "FX": 2, "F": 1}
 
 def formatted_grades(students):
     cost = 0 
+    result = []
     for name_studen , score in students.items():
         cost += 1
-        print('{first:>4s}|{name:<10s}|{mark:^5s}|{key:^5s}'.format(first=str(cost), name=name_studen,mark=str(score),key=str(grades[score])))
+        result.append('{first:>4s}|{name:<10s}|{mark:^5s}|{key:^5s}'.format(first=str(cost), name=name_studen,mark=str(score),key=str(grades[score])))
+    return result
     
 formatted_grades({"Nick": "A", "Olga": "B", "Mike": "FX", "Anna": "C"})
     
