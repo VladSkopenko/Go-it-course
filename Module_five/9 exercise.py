@@ -32,7 +32,7 @@
 
 def formatted_numbers():
     result = []
-    head = "|{first:^10s}|{second:^10s}|{third:^10s}".format(first="decimal", second="hex", third="binary")
+    head = "|{first:^10s}|{second:^10s}|{third:^10s}|".format(first="decimal", second="hex", third="binary")
     result.append(head)
     for element in range(16):
         decimal = element
@@ -42,7 +42,5 @@ def formatted_numbers():
         result.append(row)
     return result
 
-
-print(formatted_numbers())
-
-
+for el in formatted_numbers():
+    print(el)
