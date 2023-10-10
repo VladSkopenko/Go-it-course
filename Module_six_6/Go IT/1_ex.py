@@ -15,3 +15,20 @@
 # функція total_salary повертає значення типу float
 # для читання файлу функція total_salary використовує лише метод readline
 # ми поки що не використовуємо менеджер контексту with
+
+def total_salary(path):
+    total = 0.0
+    file = open(path , "r")
+    line = file.readline()
+    while line:
+        parts = line.split(',')
+        if len(parts) >= 2:
+            try:
+                salary = float(int(parts[1].strip()))
+                total += salary
+            except ValueError :
+                print("Хуйня")
+        line = file.readline()
+    file.close()
+    return total
+
