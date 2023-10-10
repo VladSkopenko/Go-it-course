@@ -14,7 +14,7 @@
 
 import re
 
-pattern = "[a-zA-z]{1}[\w\.]+@[a-zA-z]+\.+[a-zA-z]{2,6}"
+pattern = "[a-zA-Z]{1}[w\\.]+@[a-zA-z]+\.+[a-zA-z]{2,6}"
 def find_all_emails(text):
     result = re.findall(r"", text)
     return result
