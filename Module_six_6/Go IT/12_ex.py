@@ -9,14 +9,16 @@
 
 import base64
 
-data = ['andry:uyro18890D', 'steve:oppjM13LL9e']
+data =['andry:uyro18890D', 'steve:oppjM13LL9e']
 def encode_data_to_base64(data):
-    data_as_str = ", ".join(map(str,data))
-    data_bytes = data_as_str.encode("utf-8")
-    base64_bytes = base64.b64encode(data_bytes)
-    base64_data = base64_bytes.decode('utf-8')
-    return  base64_data 
-
-
+    code_list = []
+    for items in data:
+        fin = base64.b64encode(items.encode('utf-8')).decode('utf-8')
+        code_list.append(fin)
+    return code_list
+    
 print(encode_data_to_base64(data))
+        
+        
+    
     
