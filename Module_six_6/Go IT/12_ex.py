@@ -11,8 +11,8 @@ import base64
 
 data = ['andry:uyro18890D', 'steve:oppjM13LL9e']
 def encode_data_to_base64(data):
-    my_str = ", ".join(data)
-    data_bytes = my_str.encode("utf-8")
+    data_as_str = ", ".join(map(str,data))
+    data_bytes = data_as_str.encode("utf-8")
     base64_bytes = base64.b64encode(data_bytes)
     base64_data = base64_bytes.decode('utf-8')
     return  base64_data 
