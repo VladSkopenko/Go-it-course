@@ -9,3 +9,18 @@
 # її довжина більша або дорівнює одному символу
 # вона повністю складається з цифр
 # передбачити виняток, що, можливо, є початковий знак "+" або "-", після якого мають йти цифри
+
+s = " +123  "
+
+def is_integer(s):
+     without_probel =  s.strip()
+     if len(without_probel) == 0:
+          return False
+     if without_probel[0] in ["+", "-"]:
+          return without_probel[1:].isdigit()
+     else:
+          return without_probel.isdigit()
+
+
+
+print(is_integer(s))
