@@ -15,8 +15,11 @@
 
 def all_sub_lists(data):
     new_sublist = [[]]
-    for length in range(1, len(data) + 1):
-        for i in range(0, len(data) - length + 1):
-            new_sublist.append(data[i: i + length])
+    for length in range(1, len(data) + 1): #  получаем 1 #  дальше получаем 2 
+        for i in range(0, len(data) - length + 1): #  получаем 0 индекс и до 3  #  дальше идет опять итерация и опять начинаем с 0 индекса
+            new_sublist.append(data[i: i + length]) # data [0: 1] - добавляет [1] в список  потом [2][3][4] на этом первая итерация закончилась # за счет среза уже добавляется 0 и 1 елемент типа [1,2]
     return new_sublist
+
+
+print(all_sub_lists([1, 2, 3, 4, ]))
     
