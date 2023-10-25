@@ -4,3 +4,7 @@
 # age — числова змінна
 # is_active — булева змінна
 # subscription — встановити зн
+name = "str"
+age = 23
+is_active = True
+subcsription = None

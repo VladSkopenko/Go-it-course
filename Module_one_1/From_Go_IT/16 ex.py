@@ -2,3 +2,8 @@
 # Ширина та висота задані за допомогою функції input. Необхідно, як і раніше, розрахувати площу, але потрібно рядковий тип перетворити на чисельний
 # (float) при отриманні значення через input.
 # Змінну show створювати не треба.
+
+length = float(input("Enter length pls >>>"))
+width = float(input("Enter width pls >>>"))
+area  = length * width
+print(area)
