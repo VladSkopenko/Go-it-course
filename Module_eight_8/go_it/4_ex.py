@@ -16,18 +16,17 @@ from random import randrange
 def get_numbers_ticket(min, max, quantity):
     lst = []
     new_number = None
-    while len(lst) != quantity:
-        try:
-            if new_number:
-                new_number = randrange((new_number+1), max)
+    if 1 <= min < 1000 and 1 <= max <= 1000:
+        while len(lst) != quantity:
+                new_number = randrange(min, max)
                 lst.append(new_number)
-            elif len(lst) == 0:
-                new_number = randrange(min,max)
-        except ValueError:
-            return[]
-    return lst
+    lst.sort()
+    if len(lst) == len(set(lst)):
+        return lst
+    else:
+        return []
 
-print(get_numbers_ticket(1,49,5))
+print(get_numbers_ticket(2,49,6))
 
 
 
