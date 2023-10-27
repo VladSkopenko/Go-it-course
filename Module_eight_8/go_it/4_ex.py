@@ -17,9 +17,12 @@ def get_numbers_ticket(min, max, quantity):
     lst = []
     new_number = None
     if 1 <= min < 1000 and 1 <= max <= 1000:
-        while len(lst) != quantity:
+        try:
+            while len(lst) != quantity:
                 new_number = randrange(min, max)
                 lst.append(new_number)
+        except ValueError:
+            return []
     lst.sort()
     if len(lst) == len(set(lst)):
         return lst
