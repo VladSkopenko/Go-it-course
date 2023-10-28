@@ -6,3 +6,12 @@
 #
 # 10, 13, 73, 0 і чекають на суму 2847
 # 1, 2, 3, 4, 0 і чекають на суму 20
+num = int(input("Enter>>>"))
+sum = 0
+while True:
+    for i in range(num+1):
+        sum += i
+    num = int(input("Enter:"))
+    if num == 0:
+        break
+print(sum)

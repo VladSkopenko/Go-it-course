@@ -5,3 +5,15 @@
 # Поміщати тестові значення для змінної num: 20, 10, 5, 100
 #
 # І чекати суми в змінній sum: 210, 55, 15, 5050
+
+num = int(input("Enter the integer (0 to 100): "))
+sum = 0
+i = 0
+
+while i != num:
+    i += 1
+    sum += i
+print(sum)
+
+
+
