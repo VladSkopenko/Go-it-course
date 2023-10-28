@@ -36,3 +36,27 @@
 #
 # "Hello my little friends!", offset = 37,
 # "Hello world!", offset = 7
+message = input("Enter a message: ")
+offset = int(input("Enter the offset: "))
+encoded_message = ""
+for ch in message:
+    if ch.isalpha():
+        if ch.islower():
+            pos = ord(ch) - ord('a')
+            pos = (pos + offset) % 26
+            new_ch = chr(pos + ord('a'))
+            encoded_message += new_ch
+        else:
+            pos = ord(ch) - ord("A")
+            pos = (pos + offset) % 26
+            new_ch = chr(pos + ord('A'))
+            encoded_message += new_ch
+    else:
+        encoded_message += ch
+
+
+
+
+
+
+

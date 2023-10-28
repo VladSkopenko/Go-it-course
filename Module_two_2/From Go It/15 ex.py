@@ -22,7 +22,9 @@
 # operand = None
 # operator = None
 # wait_for_number = True
-# result — сюди поміщаємо підсумковий результат operand — завжди зберігає поточне число operator — рядковий параметр, може містити чотири значення, "+", "-", "*", "/" wait_for_number — прапорець, який вказує, що очікують на вводі оператор (operator) або операнд (operand)
+# result — сюди поміщаємо підсумковий результат operand — завжди зберігає поточне число operator —
+# рядковий параметр, може містити чотири значення, "+", "-", "*", "/" wait_for_number — прапорець, який вказує,
+# що очікують на вводі оператор (operator) або операнд (operand)
 #
 # Приклад виконання програми:
 #
@@ -43,3 +45,42 @@
 #
 # Перша: ["10", "+", "5", "6", "/", "3", "-", "a", "2", "*", "6", "= "], результат 18.0
 # Друга: ["2", "3", "-", "1", "+", "10", "*", "2", "="], результат 22.0
+result = None
+operand = None
+operator = None
+wait_for_number = True
+while True:
+    try:
+        if wait_for_number:
+            operand = float(input("Enter  operand>>>"))
+            if operand == "=":
+                print(result)
+                break
+            if operator == None:
+                result = operand
+            elif operator == "+":
+                result += operand
+            elif operator == "-":
+                result -= operand
+            elif operator == "/":
+                try:
+                    result /= operand
+                except ZeroDivisionError:
+                    print("ZeroDivisionError")
+                    continue
+            elif operator == "*":
+                result *= operand
+        wait_for_number = False
+    except ValueError:
+        print(f"Enter number pls {operand} is not number ")
+        continue
+    if not wait_for_number:
+        operator = input("Enter operator >>>")
+        if operator == "=":
+            print(result)
+            break
+        if operator not in "+-*/=":
+            print("fuck")
+            continue
+        wait_for_number = True
+
