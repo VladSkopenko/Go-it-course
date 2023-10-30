@@ -44,10 +44,15 @@ def get_random_winners(quantity, participants):
         for key in participants.keys():
             winners.append(key)
         random.shuffle(winners)
-        result = random.sample(winners, k=quantity)
+        result = random.sample(winners, quantity)
         return result
 
-print(get_random_winners(2, part))
+print(get_random_winners(1, {1:"1",
+                              2:"2",
+                             3:"3",
+                             4:"4",
+                             5:"5",}))
+
 
 
 
