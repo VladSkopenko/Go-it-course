@@ -21,13 +21,21 @@ import collections
 
 Cat = collections.namedtuple("Cat", ["nickname", "age", "owner"])
 my_cat = [Cat("Mick", 5, "Sara"), Cat("Barsik", 7, "Olga"), Cat("Simon", 3, "Yura")]
+cat_dict_list = [
+    {"nickname": "Mick", "age": 5, "owner": "Sara"},
+    {"nickname": "Barsik", "age": 7, "owner": "Olga"},
+    {"nickname": "Simon", "age": 3, "owner": "Yura"}
+]
 
 def convert_list(cats):
     if all(isinstance(cat, Cat) for cat in cats):
         return [cat._asdict() for cat in cats]
+    elif all(isinstance(cat, dict) for cat in cats):
+        return [Cat(**cat_cat) for cat_cat in cats]
 
 
-print(convert_list(my_cat))
+
+print(convert_list(cat_dict_list))
 
 
 
