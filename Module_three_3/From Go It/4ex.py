@@ -3,3 +3,10 @@
 # Тут і надалі ми під знижкою розумітимемо коефіцієнт, який визначає розмір від ціни.
 # І на цей розмір ми знижуємо підсумкову вартість товару.
 # Логіку функції необхідно прописати у внутрішній функції apply_discount, використовуючи оголошення зміною price як nonlocal.
+def discount_price(price, discount):
+    def apply_discount():
+        nonlocal price
+        price = price - price * discount
+
+    apply_discount()
+    return price

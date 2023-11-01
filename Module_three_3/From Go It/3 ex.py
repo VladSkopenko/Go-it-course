@@ -3,3 +3,13 @@
 # Напишіть функцію, яка приймає один параметр — відстань поїздки в кілометрах.
 # Функція має повертати підсумкову суму оплати за послуги таксі дійсним числом.
 # Також функція повинна змінювати глобальну змінну — лічильник total_trip після кожного виклику та збільшувати її на одиницю.
+base_rate = 40
+price_per_km = 10
+total_trip = 0
+
+
+def calculate_trip_price(distance_km):
+    global total_trip
+    total_trip += 1
+    sum = price_per_km * distance_km + total_trip * base_rate
+    return sum
