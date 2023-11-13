@@ -9,3 +9,21 @@
 # Функція generator_numbers(string="") безпосередньо розпарсює рядок і за допомогою yield повертає поточне число.
 #
 # Функція sum_profit(string) підсумовує числа, отримані від generator_numbers, та повертає загальну суму прибутку з рядка.
+
+import re
+
+
+def generator_numbers(string=""):
+    res = re.findall(r"\d+", string)
+    for r in res:
+        yield r
+
+
+def sum_profit(string):
+    ris = 0
+    for numnum in generator_numbers(string):
+        ris += int(numnum)
+    return ris
+
+
+
